@@ -1,0 +1,102 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/fontawesome-free-6.4.2-web/css/all.css" rel="stylesheet" />
+    <link href="~/Content/css/all.css" rel="stylesheet" />
+    <script src="~/Content/js/bootstrap.bundle.js"></script>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row bg-dark">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            Welcome to Student
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+
+        </div>
+    </div>
+    <div class="row menu bg-dark">
+        @*Start Menu*@
+        <nav class="navbar navbar-dark bg-dark sticky-top text-center" style="margin-top:1px;">
+            <div class="container-fluid pl-4">
+                <a class="navbar-brand" href="#" style="margin-left:50px;margin-top:-25px;font-size:20px;">
+                    Indeed <b style="color:orange;">
+                        Learning
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </b>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">
+                                    Deshboard
+                                    <i class="fa-solid fa-bars"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Student/assignment">Assignment/Task</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Student/lecture">Lecture Videos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Student/uploadedassignment">Uploaded Assignment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Student/Profile">My Profile</a>
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Student/changepassword">Change Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Student/StdudentLogin">Logout</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        @*End Menu*@
+    </div>
+    <div class="row">
+        <div class="col-sm-12" style="min-height:500px;">
+
+
+            @RenderBody()
+        </div>
+    </div>
+    <div class="row footer text-bg-dark m-1 mt-4">
+        <div class="col-sm-8 fs-5 m-3">
+            <a href="https://www.techpile.in" style="text-decoration:none;color:white">
+                Techpile Technology PVT LTD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:red;"> Developed By Khurshed Alam</b>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+</body>
+</html>
+
+

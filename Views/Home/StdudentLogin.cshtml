@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "StdudentLogin";
+    Layout = "~/Views/Shared/general.cshtml";
+}
+
+@*<h2>StdudentLogin</h2>*@
+
+
+<div class="row p-5">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4 card">
+        <img src="~/Content/image/registerstudent.jpg" style="height:500px;width:500px;" />
+    </div>
+
+    <div class="col-sm-4 card text-center ms-4 text-bg-light">
+    
+        <!--Starting of form card-->
+        <div class="card-body mt-4">
+            <h4 class="card-title text-center">WELCOME TO SK TECHNOLOGY</h4>
+
+
+            <h6 class="card-title text-center mt-2" style=" color:silver">Login to Your Online Training</h6>
+            <form method="post">
+                <div class="input-group flex-nowrap mt-4" style="border-radius:50px;">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-user"></i></b></span>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" placeholder="Enter Your Name..." required name="userid">
+                </div>
+
+                <div class="input-group flex-nowrap mt-4">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-key"></i></b></span>
+                    <input type="password" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" placeholder="Type Password..." required name="password">
+                </div>
+
+                <input type="submit" value="Sign In" class="form-control mt-4 text-bg-warning" style="border-radius:50px;" />
+                <p class="mt-5">Or <b class="text-warning text-center">Forget Password.</b></p>
+                <hr/>
+                <p class="mt-5">Don't have an account? <b class="text-warning">Sign Up</b></p>
+            </form>
+        </div>
+        <!--End of form card-->
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+

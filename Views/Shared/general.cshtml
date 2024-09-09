@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/all.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome-free-6.4.2-web/css/all.css" rel="stylesheet" />
+    <style>
+        :root {
+            --bgcolor: linear-gradient(45deg,#4a148c,#d81b60);
+            --txtcolor: #d81b60;
+        }
+        .bg-mycolor{
+            background:var(--bgcolor) !important;
+        }
+        .txt-mycolor{
+            color:var(--txtcolor);
+        }
+        .ico{
+            font-size:23px;
+            padding:2px;
+            transition:all 1s;
+
+        }
+            .ico:hover {
+                transform: rotate(360deg);
+                transition: all 2s;
+                
+            }
+            #menu{
+                background:transparent !important;
+
+            }
+            #menu ul li a{
+                color:white;
+            }
+            /*.footer{
+                     min-height:300px;
+                     margin-bottom:2%;
+                     padding:70px 0;
+            }*/
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            .container{
+                max-width:1170px;
+                /*background:red;*/
+                margin:auto;
+
+
+            }
+            .row{
+                display:flex;
+                flex-wrap:wrap;
+            }
+        ul {
+            list-style: none;
+           
+        }
+
+            .footer{
+                background:#24262b;
+                padding:0 15px;
+                min-height:300%;
+                margin-bottom:2%;
+            }
+
+            
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+            /*display: flex;
+            flex-wrap: wrap;*/
+        }
+        .footer-col h4{
+            font-size:18px;
+            color:white;
+            text-transform:capitalize;
+            margin-bottom:35px;
+            font-weight:500;
+            position:relative;
+            margin-top:20px;
+            
+
+        }
+            .footer-col h4::before {
+                content: '';
+                position:absolute;
+                left:0;
+                bottom:-10px;
+                background:#e91e63;
+                height:2px;
+                box-sizing:border-box;
+                width:50px;
+
+            }
+            .footer-col ul li:not(:last-child){
+                margin-bottom:10px;
+               
+            }
+            /*.footer-col ul li a{
+                font-size:16px;
+                text-transform:capitalize;
+                color:white;
+                text-decoration:none;
+                font-weight:300;
+                color:#bbbbbb;
+                display:block;
+            }
+
+            .footer-col ul li a:hover{
+                color:white;
+                padding:8px;
+
+            }*/
+            .footer-col ul li a{
+                text-decoration:none;
+                color:white;
+            }
+
+
+            .footer-col .social-link a{
+                display:inline-block;
+                height:40px;
+                width:40px;
+                background:rgba(255, 255, 255, 0.2);
+                margin:0 10px 10px 0;
+                text-align:center;
+                line-height:40px;
+                border-radius:50%;
+                color:white;
+                transition:all 0.5s ease;
+            }
+                .footer-col .social-link a :hover{
+                    color:#24262b;
+                    background:white;
+
+                }
+                
+                .bfooter {
+                    min-height: 50px;
+                }
+        .icon {
+            font-size: 30px;
+            background: orange;
+            color: white;
+            border-radius:25px;
+            padding:4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row t1 bg-mycolor text-center pt-1 text-light" style="height:35px;">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <i class="fa-solid fa-phone"></i>
+                +91, 8174955112
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <i class="fa-regular fa-envelope"></i>
+                alamkhurshed0208@gmail.com
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <i class="fa-solid fa-laptop-file"></i>
+                Welcome to Indeed Learning
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <i class="fa-brands fa-square-facebook ico"></i>
+                <i class="fa-brands fa-square-instagram ico"></i>
+                <i class="fa-brands fa-square-twitter ico"></i>
+                <i class="fa-brands fa-aws ico"></i>
+            </div>
+        </div>
+        <div class="row t2">
+            <div class="col-sm-10 ms-auto">
+                <div class="row py-2">
+                    <div class="col-sm-4 fs-2">
+                        <i class="fa-solid fa-laptop-file txt-mycolor"></i>
+                        Indeed<b class="txt-mycolor">
+                            Learning
+                        </b>
+
+
+                    </div>
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-3 fs-5">
+                        <a href="#" class="btn bg-mycolor text-light">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-bag-shopping">
+                            </i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row t3 bg-mycolor">
+            <div class="col-sm-9 mx-auto bg-mycolor  ps-5">
+                <!--Start menu-->
+                <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+                    <div class="container-fluid">
+                        @*<a class="navbar-brand" href="#">Navbar</a>*@
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/Home/Index">
+                                        <i class="fa-solid fa-house-chimney"></i>Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/About"><i class="fa-solid fa-circle-info"></i>About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Contact"><i class="fa-solid fa-phone-volume"></i>Contact us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/SingUp">Sign Up</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Adminlogin"><i class="fa-solid fa-right-to-bracket"></i>Admin Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/StdudentLogin"><i class="fa-solid fa-right-to-bracket"></i>
+                                        Student
+                                        login
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/SuccessStories"><i class="fa-solid fa-graduation-cap"></i>
+
+                                        Success
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Facility">
+
+                                    Facility
+                                    </a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/SingIn"><i class="fa-solid fa-comments"></i>Feedback</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" aria-disabled="true">
+                                        Default user
+                                        <img src="~/Content/image/User.jpg" class="img-thumbnail" style="height:30px;" />
+                                    </a>
+
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </nav>
+                <!--End menu-->
+            </div>
+        </div>
+        <div class="row bg-light" style="min-height:450px;">
+            <div class="col-sm-12">
+                @RenderBody()
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Lreaning Hub</h4>
+                        @*<p><b style="color:#ffffff;">I am a Software</b></p>*@
+                    <p style="color:white;">The Learning Hub is Motorsport UK’s online learning platform and aims to provide 
+                        an easy to use and time-efficient online learning experience which will help you enhance 
+                        your skills and prepare you for the role you have chosen to undertake. To access the Learning Hub, 
+                        log in to the Motorsport UK member portal .</p>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quicks LInk</h4>
+                        <ul>
+                            <li><a href="~/home/index">Home</a></li>
+                            <li><a href="~/home/about">Abouts Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="~/home/stdudentlogin">Student Login</a></li>
+                            <li><a href="~/home/adminlogin">Admin Login</a></li>
+                            <li><a href="~/home/successstories">Success Strories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <i class="fa-solid fa-location-dot icon" style="font-size:20px;"></i>
+                        <b style="color:white;">
+                            Jungale Siswa Bajar ,Post Pachrukhiya Dist. Kushinagar<br />
+                            Utter Pradesh -274303
+                        </b><br />
+                        <i class="fa-solid fa-phone  mt-2 icon" style="font-size:20px;"></i><b style="color:white;"> +91 , 8174955112</b> <br />
+                        <i class="fa-solid fa-phone  mt-2 icon" style="font-size:20px;"></i><b style="color:white;"> +91 , 9839245112</b> <br />
+                        <i class="fa-solid fa-envelope mt-2 icon" style="font-size:20px;"></i><b style="color:white;">  alamkhurshed@gmail.com </b> <br />
+                        <i class="fa-solid fa-envelope mt-2 icon" style="font-size:20px;"></i><b style="color:white;"> nurshed0208@gamil.com</b> <br />
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow us</h4>
+                        <div class="social-link">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/khurshed_officials"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="row bfooter bg-dark">
+            <marquee direction="left" behavior="alternate"><h1 class="text-info">Developer by Khurshed Alam</h1></marquee>
+        </div>
+    </div>
+    <script src="~/Content/js/bootstrap.bundle.js"></script>
+</body>
+</html>

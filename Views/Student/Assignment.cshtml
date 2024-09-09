@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Assignment";
+    Layout = "~/Views/Shared/Student.cshtml";
+}
+
+<h3 class="text-center">
+    <br />
+    Your Assignment
+    <hr />
+
+</h3>
+@{
+
+    if (Session["sbatch"] != null)
+    {
+        if (ViewBag.task.Rows.Count > 0)
+        {
+            foreach (var t in ViewBag.task.Rows)
+            {
+
+                <div class="container">
+                    <div class="card text-center mt-3">
+                        <div class="card-header">
+                            Added On :@t[6]23 Septem 2023<br />
+                            Assigned By :Mr. @t[5]
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@t[2]</h5>
+
+                            <p class="card-text">@t[3]</p>
+                            <a href="~/Content/Task/@t[4]" target="_blank" class="btn btn-primary">Download The Task</a>
+                            @*<a href="#" class="btn btn-primary">Upload Your File</a>*@
+                        </div>
+
+                        <div class="card-footer text-body-secondary">
+                           @t[7]
+                            @if (t[7].ToString().Equals(null)|| t[7].ToString()=="") {
+
+                            <form method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="tid" value="@t[0]" />
+                                <input type="file" name="tfile" />
+                                <input type="submit" class="btn btn-primary" value="Submit Task"/>
+
+                            </form>
+                            }
+                            <spna class="text-info">Note : Please prepare one file of task in. .pdf or .word format, and submit on click of upload button.</spna>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+        }
+        else
+        {<center>
+
+    <div class="alert alert-danger d-flex align-items-center" style="max-height:100px;" role="alert">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg>
+        <div>
+            No Task is assigned to you by Admin till Now. Please wait for the task.<br />
+            अब तक आपको कोई टास्क Admin द्वारा नहीं सौंपा गया है। कृपया कार्य की प्रतीक्षा करें।
+        </div>
+    </div>
+</center>
+
+        }
+    }
+}
+
+

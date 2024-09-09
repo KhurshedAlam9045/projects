@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/general.cshtml";
+}
+<html>
+<head>
+    <style>
+        .form-control{
+            height:45px;
+            margin-bottom:5%;
+        }
+        .box{
+
+            height:500px;
+            width:600px;
+            border:1px solid red;
+            margin-top:20px;
+            margin-left:50px;
+            border:none;
+        }
+        h2 {
+         
+            font-size:18px;
+            color:black;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+            font-size:30px;
+            margin-top: 20px;
+        }
+
+         h2::before {
+            content: '';
+            position:absolute;
+            left: 0;
+            bottom: -10px;
+            background:darkorange;
+            height: 2px;
+            box-sizing: border-box;
+            width:65px;
+            margin-left:0px auto;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: black;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+            font-size: 30px;
+            margin-top: 20px;
+        }
+
+            h3::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                background: darkorange;
+                height: 2px;
+                box-sizing: border-box;
+                width:65px;
+                margin-left:60px;
+            }
+
+        .icons {
+            font-size:40px;
+            background: orange;
+            color: white;
+            border-radius:50%;
+            padding: 4px;
+            /*width:40px;*/
+        }
+        h6{
+         color:black;
+         font-weight:bold;
+         transition:all .2s;
+        }
+        h6:hover{
+            color:darkorange;
+            transition:.1s;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="row py-3">
+        <div class="fs-2 text-center">Contact <b class="t-mycolor">Us &nbsp;<i class="fa-solid fa-phone fa-spin"></i></b></div>
+        <div class="col-sm-10 mx-auto">
+            <div class="row">
+
+
+                <div class="col-sm-6">
+                    <form method="post">
+                        Name:
+                        <input type="text" placeholder="Name..........." required class="form-control" name="name" />
+                        Mobile:
+                        <input type="number" placeholder="Mobile....." required class="form-control" name="mobno" />
+                        Email:
+                        <input type="email" placeholder="Email........." required class="form-control" name="email" />
+
+                        @*<input type="date" required name="enq_date" /><br /><br /><br />*@
+                        Message:
+                        <textarea placeholder="Message......." required name="message" class="form-control" style="height:80px;"></textarea>
+                        <br />
+                        <input type="submit" value="Save" class="bg-mycolor form-control text-white" />
+
+
+                    </form>
+                </div>
+                <div class="col-sm-5">
+                    <div class="box">
+                        <h2 style="margin-left:20px;">Contact Info</h2>
+                        <h3 style="color:orange;margin-left:40px;"><i class="fa-solid fa-location-dot icons"></i>&nbsp;Offline Address</h3>
+                        <p style="margin-left:95px;margin-top:-15px;">Jungale Siswa Bajar Post Pachrukhiya Dist. Kushinagar<br />Utter Pradesh 274303 </p>
+                        <h3 style="color:orange;margin-left:40px;"><i class="fa-solid fa-phone icons"></i>&nbsp;Call Us</h3>
+                        <h6 style=" margin-left: 95px;margin-top:-15px;">+91 ,8174955112<br /><br />+91, 9839245112</h6>
+                        <h3 style=" color:orange;margin-left:40px;"><i class="fa-solid fa-envelope icons"></i>&nbsp;Mail Us</h3>
+                        <h6 style="margin-left: 95px;margin-top:-15px;">&nbsp;alamKhurshed0208@gmail.com</h6>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <h1 class="text-center ">Google<b class="text-warning"> Map</b>&nbsp;<b class="text-warning"><i class="fa-solid fa-location-dot fa-spin"></i></b></h1>
+        
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66242.24186088289!2d84.04724591312153!3d26.865708895594768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39938f9ef3ca5007%3A0x1be2ce4e0f239bca!2sMadrassa%20Faiz-a-aam%20Highschool!5e0!3m2!1sen!2sin!4v1694850035309!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+
+
+    </div>
+    
+    
+
+
+</body>
+</html>
+
+

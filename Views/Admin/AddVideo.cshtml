@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "AddVideo";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+<style>
+    .otp {
+        background: #71ff71;
+        color:white;
+    }
+
+
+
+</style>
+@*<h2>AddVideo</h2>*@
+<div class="row p-5">
+    <!--Starting of form card-->
+    <div class="col-sm-4 card text-bg-light">
+        <div class="card-body">
+            <h4 class="card-title text-center" style=" color:#c6003d;">Video Upload</h4>
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Choose Batch:</label>
+                    <select class="form-control" name="cbatch">
+                        <option value="0">Choose Batch</option>
+                        @foreach (var row in ViewBag.batches.Rows)
+                {
+                    <option value="@row[0]">@row[1]</option>
+                }
+
+                    </select>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Choose Category:</label>
+                  <select name="category" class="form-control">
+
+                        <option value="0">Choose Video Category</option>
+                        @foreach (var row in ViewBag.cat.Rows)
+                        {
+                            <option value="@row[0]">@row[1]</option>
+                        }
+
+
+                    </select>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Video Title:</label>
+                    <input type="text" class="form-control" name="title" id="" aria-describedby="Category"/>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Video Description:</label>
+                    <input type="text" class="form-control" name="description" id="" aria-describedby="Category" />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail"> Choose Video(MP3 format):</label>
+                    <input type="file" class="form-control" name="videofile" id="videoFile" accept="video/*"  aria-describedby="Category"/>
+                </div>
+
+                <input type="submit" class="btn btn-danger mt-3" style="background:#c6003d;" value="ADD NOW" />
+
+            </form>
+        </div>
+    </div>
+    <!--End of form card-->
+    <div class="col-sm-7 card text-center ms-4">
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th> S No.</th>
+                        <th>Batch</th>
+                        <th> Video Category</th>
+                        <th> Video Title</th>
+                        <th>Video Description</th>
+                        <th>Download Video</th>
+                        <th>Added On</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @{ 
+                        if(ViewBag.videos != null)
+            {
+                foreach(var data in ViewBag.videos.Rows)
+                {
+                                        <tr>
+                                            <td>@data[0]</td>
+                                            <td>@data[1]</td>
+                                            <td>@data[2]</td>
+                                            <td>@data[3]</td>
+                                            <td>@data[4]</td>
+                                            <td><i class="fa fa-download text-bg-primary"></i></td>
+                                            <td>@data[6]</td>
+                                            <td><i class="fa fa-trash text-danger"></i></td>
+                                        </tr>
+                }
+            }
+
+
+                    }
+
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div>
+</div>
+

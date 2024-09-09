@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "AddAssignment";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+@*<h2>AddAssignment</h2>*@
+
+<div class="row p-5">
+    <!--Starting of form card-->
+    <div class="col-sm-4 card">
+        <div class="card-body bg-light">
+            <h4 class="card-title text-center" style=" color:#c6003d;">ADD  Assignment &nbsp;<b style="color:green;"><i class="fa-solid fa-shower"></i></b></h4>
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Choose Batch:</label>
+
+                    <select class="form-control" required  name="Cbatch">
+                        <option value="0">Choose Batch</option>
+                        @foreach (var row in ViewBag.batches.Rows)
+                        {
+                            <option value="@row[0]">@row[1]</option>
+                        }
+
+                    </select>
+
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail"> Title:</label>
+                    <input type="text" class="form-control" required  name="Vtitle" aria-describedby="AddBatch" placeholder="" />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Descripation:</label>
+
+                    <textarea class="form-control" required name="description"></textarea>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Choose Task:</label>
+                    <input type="file" class="form-control"required  name="Ctask" aria-describedby="AddBatch" placeholder="" />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Name of Author:</label>
+                    <input type="text" class="form-control" required name="author" aria-describedby="AddBatch" placeholder="Enter Your Name...." />
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail"> ADD Date:</label>
+                    <input type="date" class="form-control" required  name="" aria-describedby="AddBatch" placeholder="" />
+                </div>
+
+                <input type="submit" class="btn btn-danger mt-3" style="background:#c6003d;" value="ADD NOW" />
+
+            </form>
+        </div>
+    </div>
+    <!--End of form card-->
+    <div class="col-sm-7 card  ms-5">
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th> S. No.</th>
+                        <th>  Batch Name</th>
+                        <th> Title</th>
+                        <th> Descripation</th>
+                        <th>Download Task File</th>
+                        <th>  Name of Author</th>
+                        <th>Added On</th>
+                        <th> Action</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+                        if (ViewBag.task != null)
+                        {
+                            foreach(var data in ViewBag.task.Rows)
+                            {
+                                        <tr>
+                                            <td>@data[0]</td>
+                                            <td>@data[1]</td>
+                                            <td>@data[2]</td>
+                                            <td>@data[3]</td>
+                                            <td><a href="~/Content/Task/@data[4]" target="_blank" style="text-decoration:none;"><i class="fa fa-download text-danger"></i></a></td>
+                                            <td>@data[5]</td>
+                                            <td>@data[6]</td>
+                                            <td><i class="fa fa-trash text-danger"></i></td>
+
+                                        </tr>
+                }
+            }
+                    }
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div>
+</div>

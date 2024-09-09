@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "profile";
+    Layout = "~/Views/Shared/Student.cshtml";
+}
+
+<div class="container mt-5">
+    <h2>MY PROFILE</h2>
+    @{
+        if (ViewBag.profile != null)
+        {
+            if (ViewBag.profile.Rows.Count > 0)
+            {
+        <div class="row p-5">
+            
+                
+                <div class="card mb-3 p-5">
+                    <div class="row g-0">
+                        <div class="col-md-3">
+                            <img src="~/Content/image/User.jpg" class="img-fluid rounded-start" alt="....">
+
+                        </div>
+                        <div class="col-md-9">
+                                <div class="row">
+                                        <form method="post">
+                                            <div class="col-sm-4">
+                                                Name<br />
+                                                <input type="text" name="name" class="form-control" required value="@ViewBag.profile.Rows[0][0]" />
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                Mobile Number:<br />
+                                                <input type="number" name="mobno" class="form-control" required value="@ViewBag.profile.Rows[0][3]" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                Course<br />
+                                                <input type="text" name="course" class="form-control" required value="@ViewBag.profile.Rows[0][6]" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                College<br />
+                                                <input type="text" name="college" class="form-control" required value="@ViewBag.profile.Rows[0][5]" />
+                                            </div>
+                                            <br /><br />
+                                            <div class="row mt-4">
+                                                <div class="col-sm-2">
+
+                                                    <input type="submit" class="btn btn-info" value="Uploaded File" />
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+               
+
+            }
+            else
+            {
+                <h2>Some profile, please login again.....</h2>
+            }
+        }
+    }
+
+</div>

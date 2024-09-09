@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Adminlogin";
+    Layout = "~/Views/Shared/general.cshtml";
+}
+
+@*<h2>Adminlogin</h2>*@
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    
+    <div class="col-sm-4 m-4 p-3 card text-bg-light">
+        <h4 class="text-center">ADMIN <b class="text-warning">lOGIN <i class="fa-solid fa-key fa-spin"></i></b></h4>
+        <form method="post">
+            <div class="form-group mt-3">
+                <label>ADMIN ID:</label>
+                <input type="text" class="form-control" placeholder="Enter ID" name="adminid" />
+            </div>
+
+            <div class="form-group mt-3">
+                <label>ADMIN PASSWORD:</label>
+                <input type="password" class="form-control" placeholder="Enter Password" name="password" />
+            </div>
+            <input type="submit" class="btn btn-warning mt-3" value="Login Now" />
+        </form>
+    </div>
+   
+</div>
+
+

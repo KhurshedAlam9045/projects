@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "submittedtask";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<h3 class="text-center">
+    <br />
+    Your Submitted Task
+    <hr />
+
+</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Sr</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Task Name</th>
+            <th scope="col">Download Answer</th>
+            <th scope="col">Marking</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (ViewBag.ans != null)
+            {
+                foreach (var a in ViewBag.ans.Rows)
+                {
+
+                    <tr>
+                        <td>1</td>
+                        <td>@a[0]</td>
+                        <td>@a[1]</td>
+                        <td><a href="~/Content/answerfile/@a[2]"><i class="fa fa-download"></i></a></td>
+                        <td>
+                            <form method="post" action="/admin/marking">
+                                <input type="hidden" name="ansid"  value="@a[3]" />
+                                Max Marks:
+                                <input type="number" name="maxmark" value="@a[4]"/>
+                                Obtain Marks:
+                                <input type="number" name="obtainmark" value="@a[5]"/>
+                                <input type="submit" value="assign" />
+                            </form>
+                        </td>
+                    </tr>
+
+                }
+            }
+        }
+
+    </tbody>
+
+</table>
+
+
+

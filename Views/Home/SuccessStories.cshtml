@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "SuccessStories";
+    Layout = "~/Views/Shared/general.cshtml";
+}
+
+
+
+<h2 class="text-center mt-2">Success stories</h2>
+<h6 class="text-center">Here are few career transformation,to inspire you</h6>
+<div class="container">
+    <div class="row">
+        @*<div class="col-sm-3 my-3">
+            <div class="card">
+                <div class="row mt-3 mb-3">
+                    <div class="card-body text-center">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            12 LPA
+                            <span class-="visually-hidden"></span>
+                        </span>
+                        <img src="~/Content/images/Android (1).png" style="height:80px;width:80px;border-radius:50%;" /><br />
+                        <h5 class="card-title mt-4 text-warning name">Khurshed Alam</h5>
+                        <span style="font-size:12px;" class="card-subtitle mb-2 text-muted post">software Developer-Information Technology)</span>
+                        <hr />
+                        <h6 class="card-subtitle mb-2 text-muted post">IET LUCKNOW</h6>
+                        <h6 class="card-text mb-2 company">(computer science)</h6>
+                        <i class="fa-solid fa-arrow-down-long mb-2 text-info"></i>
+                        <h6 class="card-text mb-2 text-muted field">Google</h6>
+                        <p class="logo"><img src="~/Content/images/A1.jpg" style="width:60px; height:60px;" /></p>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+        @{
+            if (ViewBag.placement != null)
+            {
+                foreach (var p in ViewBag.placement.Rows)
+                {
+                    <div class="col-sm-3 my-3">
+                        <div class="card">
+                            <div class="row mt-3 mb-3">
+                                <div class="card-body text-center">
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        @p[7] LPA
+                                        <span class="visually-hidden">unread message</span>
+                                    </span>
+                                    <img src="~/Content/spic/@p[9]" style="height:80px;width:80px; border-radius:50%;" /><br />
+                                    <h5 class="card-tittle mt-4 text-warning name">@p[1]</h5>
+                                    <span style="font-size:12px" class="card-subtitle mb-2 text-muted post">
+                                        (@p[5]-@p[6])
+                                    </span>
+                                    <h6 class="card-subtitle mb-2 text-muted post">@p[2]</h6>
+                                    <h6 class="card-text mb-2 company">(@p[3])</h6>
+                                    <i class="fa-solid fa-arrow-down-long mb-2 text-warning"></i>
+                                    <h6 class="card-text mb-2 text-muted field">@p[4]</h6>
+                                    <p class="logo">
+                                        <img src="~/Content/clogo/@p[8]" style="width:60px;height:60px;" />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            }
+
+        }
+    </div>
+</div>

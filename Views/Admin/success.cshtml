@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "success";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+@*<h2>success</h2>*@
+
+<div class="row p-5">
+    <!--Starting of form card-->
+    @*<div class="col-sm-2"></div>*@
+    <div class="col-sm-5 card text-bg-light">
+        <div class="card-body">
+            <h4 class="card-title text-center" style=" color:#c6003d;"><b>Our Success Stories </b></h4>
+            <form method="post" enctype="multipart/form-data">
+
+                <div class="row g-3 mt-3">
+                    <div class="col">
+                        <label for="exampleInputEmail">Student Name:</label>
+                        <input type="text" class="form-control" aria-label="First name" required name="name" placeholder="Enter Your Name...">
+                    </div>
+                    <div class="col">
+                        <label for="exampleInputEmail">College of Student:</label>
+                        <input type="text" class="form-control" placeholder="Enter Your College Name..." aria-label="Last name" required  name="collegename">
+                    </div>
+                </div>
+                <div class="row g-3 mt-3">
+                    <div class="col">
+                        <label for="exampleInputEmail">Course Name:</label>
+                        <input type="text" class="form-control" aria-label="First name" required  name="course" placeholder="Enter Your Course Name...">
+                    </div>
+                    <div class="col">
+                        <label for="exampleInputEmail">Company Name:</label>
+                        <input type="text" class="form-control" placeholder="Enter Your College Name..." aria-label="Last name" required name="companyname">
+                    </div>
+                </div>
+
+                <div class="row g-3 mt-3">
+                    <div class="col">
+                        <label for="exampleInputEmail">Post:</label>
+                        <input type="text" class="form-control" aria-label="First name" required name="post" placeholder="Post...">
+                    </div>
+                    <div class="col">
+                        <label for="exampleInputEmail">Field:</label>
+                        <input type="text" class="form-control" placeholder="field..." aria-label="Last name" required  name="field">
+                    </div>
+                </div>
+                <div class="row g-3 mt-3">
+                    <div class="col">
+                        <label for="exampleInputEmail">Package:</label>
+                        <input type="number" class="form-control" aria-label="First name" required  name="package" placeholder="Package...">
+                    </div>
+                    <div class="col">
+                        <label for="exampleInputEmail">Company Logo:</label>
+                        <input type="file" class="form-control" placeholder="Company..." aria-label="Last name" required  name="companylogo">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 mt-3">
+                        <label for="exampleInputEmail">Student Pic:</label>
+                        <input type="file" class="form-control" placeholder="Company..." aria-label="Last name" required  name="studentpic">
+
+                    </div>
+                </div>
+
+                <input type="submit" class="btn btn-success mt-4" style="background:#c6003d;" value="ADD NOW" />
+
+            </form>
+        </div>
+    </div>
+
+    @*@{*@ 
+        @*if(ViewBag.placement != null)
+            {
+                foreach(var p in ViewBag.placement.Rows)
+                {
+                    <div class="col-sm-3">
+                        <div class="card">
+                       <div class="row mt-3 mb">
+                               <div class="card-body text-center">
+                                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                       @p[7] LPA
+                                       <span class="visually-hidden">unread message</span>
+                                   </span>
+                                   <img src="~/Content/studentpic/@p[9]" style="height:80px;width:80px;border-radius:50%" /><br />
+                                   <h5 class="card-title mt-4 txt-mycolor name">@p[1]</h5>
+                                   <span style="font-size:12px;" class="card-subtitle mb-2 text-muted post">
+                                       (@p[5]-@p[6])
+                                   </span>
+                                   <hr />
+                                   <h6 class="card-subtitle mb-2 text-muted post">@p[2]</h6>
+                                   <h6 class="card-text mb-2 company">@p[3]</h6>
+                                   <i class="fa-solid fa-arrow-down-long mb-2 text-info"></i>
+                                   <h6 class="card-text mb-2 text-muted field">@p[4]</h6>
+                                   <p class="logo">
+                                       <img src="~/Content/clogo/@p[8]" style="width:60px;height:60px;" />
+                                   </p>
+
+                               </div>
+                       </div>
+
+                        </div>
+
+                    </div>
+                }
+            }
+
+    }*@
+
+    <!--End of form card-->
+    <div class="col-sm-7  card text-center">
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>college</th>
+                        <th>course</th>
+                        <th>company</th>
+                        <th>post</th>
+                        <th>field</th>
+                        <th>package</th>
+                        <th>clogo</th>
+                        <th>pic</th>
+                        <th>add_date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (ViewBag.placement != null)
+                        {
+                            foreach (var p in ViewBag.placement.Rows)
+                            {
+                                <tr>
+                                    <td>@p[0]</td>
+                                    <td>@p[1]</td>
+                                    <td>@p[2]</td>
+                                    <td>@p[3]</td>
+                                    <td>@p[4]</td>
+                                    <td>@p[5]</td>
+                                    <td>@p[6]</td>
+                                    <td>@p[7]</td>
+                                    <td>@p[8]</td>
+                                    <td>@p[9]</td>
+                                    <td>@p[10]</td>
+                                    <td><i class="fa fa-trash text-danger"></i></td>
+                                </tr>
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

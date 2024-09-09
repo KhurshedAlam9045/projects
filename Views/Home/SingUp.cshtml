@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "SingUp";
+    Layout = "~/Views/Shared/general.cshtml";
+}
+
+@*<h2>SingUp</h2>*@
+
+<div class="row p-5">
+    <div class="col-sm-4 card">
+        <img src="~/Content/image/registerstudent.jpg" style="height:500px;width:560px;" />
+    </div>
+    <div class="col-sm-7 card text-center ms-4">
+        <!--Starting of form card-->
+        <div class="card-body text-bg-light">
+            <h4 class="card-title text-center" style=" color:#c6003d;">REGISTRATION <b class="text-warning">FORM</b></h4>
+            <form method="post">
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-user"></i></b></span>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" placeholder="Enter Your Name..." required name="name">
+                </div>
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-envelope"></i></b></span>
+                    <input type="email" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" placeholder="Email..." required name="email">
+                </div>
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-key"></i></b></span>
+                    <input type="password" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" placeholder="Password..." required name="password">
+                </div>
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-phone-volume"></i></b></span>
+                    <input type="number" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" placeholder="Mobile Number..." required name="mobno">
+                </div>
+                <div style="margin-right:500px;margin-top:20px;">
+                    Gender:
+                    <input type="radio" value="male" name="gender" style="margin-left: 10px;color:red" />Male
+                    <input type="radio" value="female" name="gender" style=" margin-left: 10px;" />Female
+
+                </div>
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-graduation-cap"></i></b></span>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" placeholder="College Name..." name="college" required>
+                </div>
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-list"></i></b></span>
+
+                    <select class="form-select" aria-label="Default select example" required name="course">
+                        <option selected>Select Course</option>
+                        <option>B.Tech</option>
+                        <option>M.Tech</option>
+                        <option>CS(Diploma)</option>
+                        <option>CS(IT)</option>
+                        <option>MCA</option>
+                        <option>BCA</option>
+
+                    </select>
+                </div>
+
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text text-bg-light" id="addon-wrapping"><b><i class="fa-solid fa-list"></i></b></span>
+
+                    <select class="form-select" aria-label="Default select example" required name="batch">
+                        <option selected>Choose Batch</option>
+                        @foreach (var row in ViewBag.batches.Rows)
+                        {
+                            <option value="@row[0]">@row[1]</option>
+                        }
+                    </select>
+                </div>
+
+                
+
+                <input type="submit" value="REGISTER NOW" class="form-control mt-3 text-bg-warning" />
+            </form>
+        </div>
+        <!--End of form card-->
+    </div>
+</div>
+

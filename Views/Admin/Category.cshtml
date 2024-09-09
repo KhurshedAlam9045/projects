@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+<style>
+
+
+
+</style>
+
+@*<h2>Category</h2>*@
+<div class="row p-5">
+    <!--Starting of form card-->
+    <div class="col-sm-4 card">
+        <div class="card-body" >
+            <h4 class="card-title text-center" style=" color:#c6003d;">ADD VIDEO CATEGORY</h4>
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Category Name:</label>
+                    <input type="text" class="form-control" id="catname" name="catname" aria-describedby="Category" placeholder="Enter Your Video Category" />
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Category Icon:</label>
+                    <input type="file" class="form-control" name="caticon" id="caticon" aria-describedby="Category" placeholder="" />
+                </div>
+                <input type="submit" class="btn btn-danger mt-3" style="background:#c6003d;"  value="ADD NOW"/>
+
+            </form>
+        </div>
+    </div>
+    <!--End of form card-->
+    <div class="col-sm-7 card text-center ms-4">
+        <div class="card-body">
+            <table class="table table-bordered table-striped" >
+                <thead>
+                    <tr>
+                        <th> S No.</th>
+                        <th> Category Name</th>
+                        <th> Category Icon</th>
+                        <th> Action</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @{ 
+                        foreach(var row in ViewBag.Category.Rows)
+            {
+                                        <tr>
+
+                                            <td>@row[0]</td>
+                                            <td>@row[1]</td>
+                                            <td>
+                                            <img src="~/Content/caticons/@row[2]" height=50px width=50px/></td>
+                                            <td><i class="fa fa-trash text-danger"></i></td>
+                                        </tr>
+            }
+
+                    }
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div>
+</div>
+

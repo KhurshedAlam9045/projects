@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "AddBatch";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+@*<h2>AddBatch</h2>*@
+
+<div class="row p-5">
+    <!--Starting of form card-->
+    <div class="col-sm-4 card">
+        <div class="card-body">
+            <h4 class="card-title text-center" style=" color:#c6003d;">ADD  BATCH &nbsp;<b style="color:green;"><i class="fa-solid fa-shower"></i></b></h4>
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Batch Name:</label>
+                    <input type="text" class="form-control"  name="batchname" aria-describedby="AddBatch" placeholder="Enter Your Batch Name.." />
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Batch Start Date:</label>
+                    <input type="date" class="form-control" name="batchsdate"  aria-describedby="AddBatch" placeholder="" />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Batch End Date:</label>
+                    <input type="date" class="form-control" name="batchedate"  aria-describedby="AddBatch" placeholder="" />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Total Fees:</label>
+                    <input type="number" class="form-control" name="totalfee" id="totalfee" aria-describedby="AddBatch" placeholder="" />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Batch Topic:</label>
+                    <input type="text" class="form-control" name="batchtopic"  aria-describedby="AddBatch" placeholder="" />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail">Batch Pic:</label>
+                    <input type="file" class="form-control" name="batchpic"  aria-describedby="AddBatch" placeholder="" />
+                </div>
+                <input type="submit" class="btn btn-danger mt-3" style="background:#c6003d;" value="ADD NOW" />
+
+            </form>
+        </div>
+    </div>
+    <!--End of form card-->
+    <div class="col-sm-7 card  ms-5">
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th> S No.</th>
+                        <th> Batch Name</th>
+                        <th>  Start Date</th>
+                        <th>  End Date</th>
+                        <th>  Total Fee</th>
+                        <th>  Batch Topic</th>
+                        <th>  Batch Pic</th>
+                        <th> Action</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{ 
+                        foreach(var row in ViewBag.AddBatch.Rows)
+            {
+                                        <tr>
+                                            <td>@row[0]</td>
+                                            <td>@row[1]</td>
+                                            <td>@row[2]</td>
+                                            <td>@row[3]</td>
+                                            <td>@row[4]</td>
+                                            <td>@row[5]</td>
+                                            <td><img src="~/Content/BatchPic/@row[6]" height="50px" width="50px"/></td>
+
+                                            <td><i class="fa fa-trash text-danger"></i></td>
+                                        </tr>
+            }
+
+                    }
+
+
+
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div>
+</div>
